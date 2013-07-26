@@ -1,0 +1,6 @@
+The Debian Package closure-itrust-libray
+----------------------------
+
+Packaging of the library is specific to ITrust needs. You may not need this.
+
+ -- Vincent Alquier <v.alquier@itrust.fr>  Fri, 26 Jul 2013 15:51:05 +0200

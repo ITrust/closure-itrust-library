@@ -6,7 +6,7 @@ Javascript module tools
 With [Google Closure library](https://code.google.com/p/closure-library/), it is possible to divide an application into several modules.
 
 **How to build automatically javascript modules ?**
-Using [Closure builder](https://developers.google.com/closure/library/docs/closurebuilder), you can build your application into several output files. For this, you have to specify to the *closure compiler* all files included in each plugins:
+Using [Closure builder](https://developers.google.com/closure/library/docs/closurebuilder), you can build your application into several output files. In order to do this, you have to specify to the *closure compiler* all files included in each plugins:
 e.g: *Mod1* includes *file1*, *file2*, *file3* and *Mod2* includes *file4* and *file5*, and has a dependency to *Mod1*.
 
     (closure_builder)
@@ -19,8 +19,8 @@ e.g: *Mod1* includes *file1*, *file2*, *file3* and *Mod2* includes *file4* and *
     --js ./file4.js \
     --js ./file5.js \
     
-When your application contains a lot of files, that could be boring to list all of them.
-Using itrustbuilder, you can write a json file describing your modules like this :
+If your application contains a lot of files, it can be boring to list all of them.
+Using itrustbuilder, you can write a json file describing your modules as follow:
 
     {
         "MODULES_INFO": {
@@ -33,7 +33,7 @@ Using itrustbuilder, you can write a json file describing your modules like this
         }
     }
 
-And pass it to the `itrustbuilder.py`:
+Then pass it to the `itrustbuilder.py`:
 
     itrustbuilder.py \
         --root=closure-library/ \
@@ -47,7 +47,7 @@ Additionnal parameters can be provided :
  * modules_info_uris_key: Key used in the file for the URIs part;
  * use_renaming_map: Provides an existing renaming map file for the compilation (see [Google Closure Stylesheets](https://code.google.com/p/closure-stylesheets/))
 
-The builder will automatically create `--module` flags as you define them in your JSON file. You will get 2 files once the compilation successed: `mod1.js` and `mod2.js`.
+The builder will automatically create `--module` flags as defined in your JSON file. You will get 2 files once the compilation successed: `mod1.js` and `mod2.js`.
 
 **Resolving file dependencies into modules**
 Modules loading is managed by [ModuleLoader](http://docs.closure-library.googlecode.com/git/class_goog_module_ModuleLoader.html) and [ModuleManager](http://docs.closure-library.googlecode.com/git/class_goog_module_ModuleManager.html).
@@ -60,7 +60,7 @@ Modules loading is managed by [ModuleLoader](http://docs.closure-library.googlec
     
     moduleManager_.setModuleUris(/*modules uris*/);
 
-Usually, have a file containing all modules informations is better. For instance, the following module_info.js:
+Usually, having a file containing all modules informations is more conveniant. For instance, the following module_info.js:
 
     goog.provide("myproject.ModuleInfo");
 
@@ -75,9 +75,9 @@ Usually, have a file containing all modules informations is better. For instance
         }
     }
 
-*Note: We use JSON in this object in order to use this same file for the compiler, as explain in the first part.*
+*Note: We use JSON in this object in order to use this same file for the compiler, as explained in the first part.*
 
-In order to "deploy" your modules, you have to specify all files' URIs to the `ModuleManager`. These file will be loaded in the order you give and once all file are loaded, your module is executed. So this chain of dependency is very important !
+In order to "deploy" your modules, you have to specify all files' URIs to the `ModuleManager`. These file will be loaded, in the order you give, and once all file are loaded, your module is executed. Therefore this chain of dependency is very important !
 E.g. your `Mod1` module requires `mod1_controller.js` and `mod1_init.js`. You have to give these URIs to the `setModuleUris` method:
 
     goog.require('myproject.ModuleInfo');
@@ -86,7 +86,7 @@ E.g. your `Mod1` module requires `mod1_controller.js` and `mod1_init.js`. You ha
 
     moduleManager_.setModuleUris(myproject.ModuleInfo["MODULES_URIS"]);
 
-When you will load your module, all js file will be retrieved and interpreted.
+When you load your module, all js file will be retrieved and interpreted.
 However, when you compile your application, you obtain one file per modules you defined (See **How to build automatically javascript modules ?** part).
 You will have to change your module info file to this : 
 
@@ -103,8 +103,8 @@ You will have to change your module info file to this :
         }
     }
 
-So if you want to work with a compiled and a development version of your application, instead of use `goog.module.ModuleManager` and `goog.module.ModuleLoader`, use `itrust.module.ModuleManager` and `itrust.module.ModuleLoader`. With the module info file just above and these two files, both your compiled and development version will work properly, and the file dependencies will be automatically resolved using the `goog.require()` in your code.
-The use of these files are transparent for you and  works as same as closure's file:
+So if you want to work with a compiled and a development version of your application, instead of using `goog.module.ModuleManager` and `goog.module.ModuleLoader`, use `itrust.module.ModuleManager` and `itrust.module.ModuleLoader`. With the module info file just above and these two files, both your compiled and development version will work properly, and the file dependencies will be automatically resolved using the `goog.require()` in your code.
+The use of these files is transparent for you and functions like the closure's file:
 
     goog.require("itrust.module.ModuleManager");
     goog.require("itrust.module.ModuleLoader");
@@ -118,6 +118,6 @@ The use of these files are transparent for you and  works as same as closure's f
     
     moduleManager_.setModuleUris(myproject.ModulesInfo["MODULES_URIS"], '../', 'goog/');
 
-The only change is about the `setModuleUris` method: two new optional parameters are available.
+The only change is the `setModuleUris` method: two new optional parameters are available.
  * The root input path: TO FINISH
  * The root output path: TO FINISH

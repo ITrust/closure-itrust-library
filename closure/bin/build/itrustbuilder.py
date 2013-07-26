@@ -13,6 +13,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+#
+# Modifications by ITrust, released under the same license.
 
 """Utility for Closure Library dependency calculation.
 
@@ -27,7 +30,10 @@ all JS files below a directory.
 usage: %prog [options] [file1.js file2.js ...]
 """
 
-__author__ = 'nnaze@google.com (Nathan Naze)'
+__authors__ = ('nnaze@google.com (Nathan Naze), '
+               'j.chakra@itrust.fr (Julien Chakra-Breil)')
+
+__credits__ = ['Nathan Naze', 'Julien Chakra-Breil']
 
 import collections
 import json

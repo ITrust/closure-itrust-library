@@ -23,14 +23,11 @@ goog.addSingletonGetter(itrust.module.ModuleManager);
  */
 itrust.module.ModuleManager.prototype.setModuleUris =
         function(moduleUriMap, opt_rootInputPath, opt_rootOutputPath){
-    var uris = moduleUriMap;
-    var input = opt_rootInputPath || "./";
-    var output = opt_rootOutputPath || "./";
 
-    /*
-     * 
-     */
     if(!COMPILED){
+        var uris = moduleUriMap;
+        var input = opt_rootInputPath || "./";
+        var output = opt_rootOutputPath || "./";
         var scripts = [];
         var seenScript = {};
         var deps = goog.dependencies_;

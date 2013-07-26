@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 #
+# This file is a modified version of google's closure
+# closure/bin/build/closurebuilder.py file.
+#
+# Here is the original file copyright:
+#
 # Copyright 2009 The Closure Library Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +20,23 @@
 # limitations under the License.
 #
 #
-# Modifications by ITrust, released under the same license.
+#
+#
+# This file is part of closure-itrust-library.
+#
+# Changes added to the file by ITrust are released under the GNU GPLv3 License.
+# You can redistribute it and/or modify it under the terms of the GNU General
+# Public License as published by the Free Software Foundation, either version
+# 3 of the License, or (at your option) any later version.
+#
+# closure-itrust-library is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+# details.
+#
+# You may obtain a copy of the License at
+#
+#      http://www.gnu.org/licenses/gpl.txt
 
 """Utility for Closure Library dependency calculation.
 
@@ -32,7 +53,6 @@ usage: %prog [options] [file1.js file2.js ...]
 
 __authors__ = ('nnaze@google.com (Nathan Naze), '
                'j.chakra@itrust.fr (Julien Chakra-Breil)')
-
 __credits__ = ['Nathan Naze', 'Julien Chakra-Breil']
 
 import collections

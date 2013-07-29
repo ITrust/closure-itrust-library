@@ -1,0 +1,3 @@
+#!/bin/sh -e
+/usr/share/closure-library/closure/bin/build/itrustbuilder.py \
+    --compiler_jar=/usr/share/closure-compiler/compiler.jar "$@"

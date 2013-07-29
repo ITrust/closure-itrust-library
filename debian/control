@@ -1,4 +1,4 @@
-Source: closure-itrust-libray
+Source: closure-itrust-library
 Section: devel
 Priority: extra
 Maintainer: Vincent Alquier <v.alquier@itrust.fr>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 9.0.0)
 Standards-Version: 3.9.3
 Homepage: https://github.com/ITrust/closure-itrust-library
 
-Package: closure-itrust-libray
+Package: closure-itrust-library
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  python, closure-library

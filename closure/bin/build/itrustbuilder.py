@@ -24,7 +24,7 @@
 #
 # This file is part of closure-itrust-library.
 #
-# Changes added to the file by ITrust are released under the GNU GPLv3 License.
+# Changes added to the file by ITrust are released under the GNU GPLv3 License.
 # You can redistribute it and/or modify it under the terms of the GNU General
 # Public License as published by the Free Software Foundation, either version
 # 3 of the License, or (at your option) any later version.
